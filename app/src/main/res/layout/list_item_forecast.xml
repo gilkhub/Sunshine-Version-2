@@ -6,11 +6,13 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_weight="1"
-    android:layout_gravity="center">
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:gravity="center_vertical"
+    android:padding="16dp">
 
     <FrameLayout
         android:id="@+id/list_item_forecast_icon_layout"
+        android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,6 +24,7 @@
 
     <LinearLayout
         android:id="@+id/list_item_forecast_texts_layout"
+        android:layout_weight="1"
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -43,6 +46,8 @@
 
     <LinearLayout
         android:id="@+id/list_item_forecast_high_low_layout"
+        android:layout_weight="1"
+
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
