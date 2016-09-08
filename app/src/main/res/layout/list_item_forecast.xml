@@ -11,7 +11,7 @@
     android:padding="16dp">
 
     <FrameLayout
-        android:id="@+id/list_item_forecast_icon_layout"
+        android:id="@+id/list_item_layout"
         android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -24,24 +24,24 @@
 
     <LinearLayout
         android:id="@+id/list_item_forecast_texts_layout"
-        android:layout_weight="1"
+        android:layout_weight="8"
         android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        >
 
             <TextView
                 android:id="@+id/list_item_date_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="TOMORROW"/>
+                android:text="Tomorrow"/>
 
             <TextView
                 android:id="@+id/list_item_forecast_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="CLEAR"/>
+                android:text="Clear"/>
     </LinearLayout>
 
     <LinearLayout
