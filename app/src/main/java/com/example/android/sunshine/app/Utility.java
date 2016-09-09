@@ -72,18 +72,24 @@ public class Utility {
         // For the next 5 days: "Wednesday" (just the day name)
         // For all days after that: "Mon Jun 8"
 
+//        Calendar calendar = Calendar.getInstance();
+//        int currentJulianDay = calendar.get(Calendar.DAY_OF_YEAR);
+//        calendar.setTimeInMillis(dateInMillis);
+//        int julianDay = calendar.get(Calendar.DAY_OF_YEAR);
+
         Time time = new Time();
         time.setToNow();
         long currentTime = System.currentTimeMillis();
         int julianDay = Time.getJulianDay(dateInMillis, time.gmtoff);
         int currentJulianDay = Time.getJulianDay(currentTime, time.gmtoff);
 
+
         // If the date we're building the String for is today's date, the format
         // is "Today, June 24"
         if (julianDay == currentJulianDay) {
             String today = context.getString(R.string.today);
-            return context.getString(
-                            R.string.format_full_friendly_date,
+            return String.format(context.getString(
+                            R.string.format_full_friendly_date),
                             today,
                             getFormattedMonthDay(context, dateInMillis));
         } else if ( julianDay < currentJulianDay + 7 ) {
