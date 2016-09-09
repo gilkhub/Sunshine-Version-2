@@ -41,7 +41,10 @@ public class ForecastAdapter extends CursorAdapter {
         int viewType = getItemViewType(cursor.getPosition());
         int layoutId = -1;
         // TODO: Determine layoutId from viewType
-        return LayoutInflater.from(context).inflate(viewType == VIEW_TYPE_TODAY ? R.layout.list_item_forecast_today : R.layout.list_item_forecast, parent, false);
+        return LayoutInflater.from(context).inflate(
+                viewType == VIEW_TYPE_TODAY ?
+                        R.layout.list_item_forecast_today : R.layout.list_item_forecast,
+                parent, false);
     }
 
     /*
