@@ -22,7 +22,8 @@
             android:id="@+id/detail_friendly_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/today" />
+            android:text="@string/today"
+            android:layout_gravity="bottom"/>
     </LinearLayout>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -35,11 +36,13 @@
             android:id="@+id/detail_short_format_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="June 24" />
+            android:text="June 24"
+            android:layout_gravity="top"/>
 
     </LinearLayout>
 
     <LinearLayout
+        android:baselineAligned="false"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -98,7 +101,8 @@
             android:id="@+id/detail_humidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HUMIDITY: AAA AA" />
+            android:text="HUMIDITY: AAA AA"
+            android:layout_gravity="bottom"/>
     </LinearLayout>
 
     <LinearLayout
@@ -112,13 +116,14 @@
             android:id="@+id/detail_wind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="WIND: AAA BB" />
+            android:text="WIND: AAA BB"
+            android:layout_gravity="top"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:orientation="horizontal"
         android:paddingTop="16dp">
 
@@ -126,6 +131,7 @@
             android:id="@+id/detail_pressure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PRESSURE: ABS PS" />
+            android:text="PRESSURE: ABS PS"
+            android:layout_gravity="top"/>
     </LinearLayout>
 </LinearLayout>
