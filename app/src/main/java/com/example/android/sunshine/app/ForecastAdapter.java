@@ -43,7 +43,6 @@ public class ForecastAdapter extends CursorAdapter {
         // Choose the layout type
         int viewType = getItemViewType(cursor.getPosition());
         int layoutId = -1;
-
         switch (viewType) {
             case VIEW_TYPE_TODAY: {
                 layoutId = R.layout.list_item_forecast_today;
@@ -59,6 +58,7 @@ public class ForecastAdapter extends CursorAdapter {
 
         ViewHolder viewHolder = new ViewHolder(view);
         view.setTag(viewHolder);
+
         return view;
     }
 

@@ -17,9 +17,7 @@ package com.example.android.sunshine.app;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.preference.PreferenceManager;
-import android.support.v4.content.Loader;
 import android.text.format.Time;
 
 import java.text.DateFormat;
@@ -170,7 +168,7 @@ public class Utility {
             direction = "SW";
         } else if (degrees >= 247.5 && degrees < 292.5) {
             direction = "W";
-        } else if (degrees >= 292.5 || degrees < 22.5) {
+        } else if (degrees >= 292.5 && degrees < 337.5) {
             direction = "NW";
         }
         return String.format(context.getString(windFormat), windSpeed, direction);
@@ -231,7 +229,7 @@ public class Utility {
         } else if (weatherId >= 520 && weatherId <= 531) {
             return R.drawable.art_rain;
         } else if (weatherId >= 600 && weatherId <= 622) {
-            return R.drawable.art_rain;
+            return R.drawable.art_snow;
         } else if (weatherId >= 701 && weatherId <= 761) {
             return R.drawable.art_fog;
         } else if (weatherId == 761 || weatherId == 781) {
