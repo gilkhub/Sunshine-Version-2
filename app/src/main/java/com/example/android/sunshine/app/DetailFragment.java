@@ -147,9 +147,6 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
     }
 
     @Override
-    public void onLoaderReset(Loader<Cursor> loader) { }
-
-    @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         Log.v(LOG_TAG, "In onLoadFinished");
         if (data != null && data.moveToFirst())
@@ -205,4 +202,7 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
             }
         }
     }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) { }
 }

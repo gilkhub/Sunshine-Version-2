@@ -44,10 +44,18 @@ public class ForecastAdapter extends CursorAdapter {
         int viewType = getItemViewType(cursor.getPosition());
         int layoutId = -1;
 
-        View view = LayoutInflater.from(context).inflate(
-                viewType == VIEW_TYPE_TODAY ?
-                        R.layout.list_item_forecast_today : R.layout.list_item_forecast,
-                parent, false);
+        switch (viewType) {
+            case VIEW_TYPE_TODAY: {
+                layoutId = R.layout.list_item_forecast_today;
+                break;
+            }
+            case VIEW_TYPE_FUTURE_DAY: {
+                layoutId = R.layout.list_item_forecast;
+                break;
+            }
+        }
+
+        View view = LayoutInflater.from(context).inflate(layoutId, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
         view.setTag(viewHolder);
@@ -100,12 +108,10 @@ public class ForecastAdapter extends CursorAdapter {
 
         // Read high temperature from cursor
         double high = cursor.getDouble(ForecastFragment.COL_WEATHER_MAX_TEMP);
-        TextView highView = (TextView) view.findViewById(R.id.list_item_high_textview);
         viewHolder.highTempView.setText(Utility.formatTemperature(context, high, isMetric));
 
         // Read low temperature from cursor
-        int low = cursor.getInt(ForecastFragment.COL_WEATHER_MIN_TEMP);
-        TextView lowView = (TextView) view.findViewById(R.id.list_item_low_textview);
+        double low = cursor.getDouble(ForecastFragment.COL_WEATHER_MIN_TEMP);
         viewHolder.lowTempView.setText(Utility.formatTemperature(context, low, isMetric));
     }
 
