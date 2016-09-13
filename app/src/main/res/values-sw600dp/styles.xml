@@ -6,7 +6,7 @@
     </style>
 
     <style name="ForecastListStyle" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Default behaviour is default, different only for tablets -->
+        <item name="android:choiceMode">singleChoice</item>
     </style>
 
 </resources>
